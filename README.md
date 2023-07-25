@@ -1,6 +1,6 @@
 - 👋 Hi, I’m Harshit
 - 👀 I’m interested in App/Game development.
-- 🌱 I’m currently learning kotlin.
+- 🌱 I’m currently learning web.
 - 💞️ I’m not looking to collaborate on anything YET. 
 - 📫 How to reach me? Well, don't.
 

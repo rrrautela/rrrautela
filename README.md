@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Harshit
-- 👀 I’m interested in App/Game development.
+- 👀 I’m interested in touching grass.
 - 🌱 I’m currently learning web dev.
 - 💞️ I’m not looking to collaborate on anything YET. 
 - 📫 How to reach me? Well, don't.

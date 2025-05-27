@@ -1,8 +1,6 @@
-- 👋 Hi, I’m Harshit
-- 👀 I’m interested in touching grass.
-- 🌱 I’m currently learning back-end.
-- 💞️ I’m not looking to collaborate on anything YET. 
-- 📫 How to reach me? That's a question, that's a question.
+You’re reading the README. Bold of you to assume I’ve figured anything out.
+// TODO: actually write this later
+
 
 <!---
 rrrautela/rrrautela is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.

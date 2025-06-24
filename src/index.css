@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.bg-animated-gradient {
+  background: linear-gradient(135deg, #1A2980, #26D0CE, #DA4453, #4A00B6, #FC6767);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(255, 107, 107, 0.8), 0 0 20px rgba(255, 107, 107, 0.6); }
+  50% { text-shadow: 0 0 20px rgba(255, 107, 107, 1), 0 0 40px rgba(255, 107, 107, 0.8); }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hover-bounce:hover {
+  animation: bounceEffect 0.3s ease-in-out forwards;
+}
+
+@keyframes bounceEffect {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}

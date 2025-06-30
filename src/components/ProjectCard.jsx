@@ -1,5 +1,6 @@
 // ProjectCard component (now defined directly in this file)
-import { motion } from 'framer-motion'; // ✅ Required for animations
+//little changes
+import { motion } from 'framer-motion'; // for animations
 
 export function ProjectCard({ title, desc, image, link, tags = [] }) {
   return (

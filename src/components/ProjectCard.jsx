@@ -1,65 +1,98 @@
-// ProjectCard component (now defined directly in this file)
-//little changes
-import { motion } from 'framer-motion'; // for animations
 
-export function ProjectCard({ title, desc, image, link, tags = [] }) {
+
+// components/ProjectCard.jsx
+import { motion } from 'framer-motion'; // useAnimationControls is not strictly needed with variants
+import { useState } from 'react';
+
+export function ProjectCard({ title, desc, image, link, repo, tags = [] }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Define animation variants for Framer Motion
+  // This makes animations more declarative and often cleaner
+  const cardVariants = {
+    initial: { scale: 1, zIndex: 0 },
+    hover: { scale: 1.05, zIndex: 50 }, // zIndex is applied directly by Framer Motion
+  };
+
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ duration: 0.05, ease: "easeOut" }}
-      className="bg-white/15 backdrop-blur-md text-white rounded-3xl
-                 shadow-2xl shadow-rose-900/30 overflow-hidden isolate
-                 hover:shadow-rose-900/60 transition-all duration-500 w-full max-w-sm lg:max-w-md p-6
-                 flex flex-col items-center border border-rose-400 font-medium"
-      style={{ fontFamily: "'Poppins', sans-serif" }}
+      variants={cardVariants} // Apply the defined variants
+      initial="initial" // Set the initial state to 'initial' variant
+      animate={isHovered ? "hover" : "initial"} // Animate to 'hover' or 'initial' based on state
+      onHoverStart={() => setIsHovered(true)} // Set state on hover start
+      onHoverEnd={() => setIsHovered(false)}   // Set state on hover end
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Smooth spring transition
+      className="relative group w-full max-w-sm lg:max-w-md overflow-visible rounded-3xl shadow-lg border border-neutral-700 bg-black"
+      style={{
+        fontFamily: "'Poppins', sans-serif",
+        transformOrigin: 'top', // Ensures the scale animation originates from the top
+      }}
+      role="article" // Semantic role for accessibility
+      aria-labelledby={`${title.replace(/\s/g, '-')}-title`} // Links to the h3 for screen readers
     >
-      {/* Project Image Container */}
-      <div className="relative w-full h-60 md:h-72 mb-5 overflow-hidden rounded-2xl shadow-xl">
+      {/* Image container */}
+      <div className="relative w-full h-64 overflow-hidden rounded-t-3xl"> {/* Added rounded-t-3xl for consistent styling */}
         <img
           src={image}
-          alt={title}
-          className="w-full h-full object-cover scale-100 transition-transform duration-500"
+          alt={`Thumbnail for ${title} project`} // More descriptive alt text for accessibility
+          className="w-full h-full object-cover transition duration-500 brightness-100 group-hover:brightness-75"
           onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = `https://placehold.co/600x400/334155/F8FAFC?text=Image+Not+Found`;
+            // Fallback for broken images: replace with a placeholder
+            e.target.onerror = null; // Prevent infinite loop if placeholder also fails
+            e.target.src = `https://placehold.co/600x400/0f0f0f/ffffff?text=Image+Not+Found`;
           }}
+          loading="lazy" // Optimize image loading by deferring off-screen images
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></div>
+        {/* Gradient overlay for better text contrast on image */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
       </div>
 
-      <h3 className="text-3xl font-extrabold mb-2 text-center text-rose-300 drop-shadow-lg leading-tight">
-        {title}
-      </h3>
+      {/* Info section shown only on hover */}
+      <div className="absolute inset-x-0 bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5 pointer-events-none">
+        <div className="pointer-events-auto"> {/* Re-enable pointer events for interactive elements */}
+          <h3 id={`${title.replace(/\s/g, '-')}-title`} className="text-xl font-semibold text-white mb-2 text-center">
+            {title}
+          </h3>
+          <p className="text-sm text-gray-200 text-center mb-3">
+            {desc}
+          </p>
 
-      <p className="text-gray-200 text-base mb-4 text-center leading-relaxed px-2 italic">
-        {desc}
-      </p>
+          {/* Tags section */}
+          <div className="flex flex-wrap gap-2 justify-center mb-4">
+            {tags.map((tag) => (
+              <span
+                key={tag} // Key for list items
+                className="bg-white/10 text-xs px-3 py-1 rounded-full text-gray-200 border border-gray-600"
+                aria-label={`Technology used: ${tag}`} // Added for accessibility
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
 
-      <div className="flex flex-wrap gap-2 mb-6 justify-center">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="bg-white/20 text-xs px-3 py-1 rounded-full text-rose-200
-                       border border-amber-400 shadow-md font-semibold"
-          >
-            {tag}
-          </span>
-        ))}
+          {/* Action buttons */}
+          <div className="flex justify-between gap-3 px-4">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer" // Security best practice for target="_blank"
+              className="w-full text-center text-white bg-neutral-800 hover:bg-white hover:text-neutral-800 font-semibold py-1.5 px-3 rounded-md border border-gray-600 transition-colors"
+              aria-label={`View live demo of ${title}`} // More specific aria-label
+            >
+              🚀 View Live
+            </a>
+            <a
+              href={repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center text-white bg-neutral-800 hover:bg-white hover:text-neutral-800 font-semibold py-1.5 px-3 rounded-md border border-gray-600 transition-colors"
+              aria-label={`View GitHub repository for ${title}`} // More specific aria-label
+            >
+              💻 View Repo
+            </a>
+          </div>
+        </div>
       </div>
-
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-auto inline-block px-7 py-3 bg-gradient-to-br from-rose-600 to-amber-500
-                   text-white rounded-lg shadow-xl hover:shadow-2xl
-                   transition-all duration-300 text-lg font-bold
-                   hover:from-rose-700 hover:to-amber-600 focus:outline-none focus:ring-2
-                   focus:ring-offset-2 focus:ring-rose-500 focus:ring-offset-gray-900"
-      >
-        🚀 View Project
-      </a>
     </motion.div>
   );
 }

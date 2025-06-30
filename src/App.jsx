@@ -15,8 +15,8 @@ export default function App() {
     <div className="min-h-screen bg-animated-gradient text-white font-sans selection:bg-rose-500/40">
       <Navbar />
 
-      {/* Hero Section / Header */}
-      <header className="text-center my-20 md:my-28 px-4 animate-fade-in">
+      {/* Header */}
+      {/* <header className="text-center my-20 md:my-28 px-4 animate-fade-in">
         <motion.blockquote
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,17 +30,17 @@ export default function App() {
           "It started in a school library—with a CS book meant for seniors, and a 14-year-old who didn’t wait—just took the chance."
         </motion.blockquote>
 
-      </header>
+      </header> */}
 
       {/* Projects Section */}
-      <section className="flex flex-wrap justify-center gap-10 md:gap-14 px-4 pb-28">
+      {/* <section className="flex flex-wrap justify-center gap-10 md:gap-14 px-4 pb-28">
         {projects.map((proj, idx) => (
           <ProjectCard key={idx} {...proj} />
         ))}
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer
+      {/* <footer
         className="text-center text-sm text-white/70 pb-10 pt-8
                     border-t border-white/20 bg-white/10 backdrop-blur-lg
                     rounded-t-3xl shadow-xl mx-4 sm:mx-6"
@@ -48,10 +48,10 @@ export default function App() {
       >
         © 2025 <span className="text-rose-300 font-bold">Your Name</span>. Built with{' '}
         <span role="img" aria-label="laptop emoji">💻</span> using React & TailwindCSS.
-      </footer>
+      </footer> */}
 
       {/* Fixed "Contact Me" Button */}
-      <a
+      {/* <a
         href="mailto:rautelacodes@gmail.com"
         className="fixed bottom-6 right-6 lg:bottom-10 lg:right-10
                     bg-gradient-to-br from-rose-500 to-orange-400
@@ -61,12 +61,13 @@ export default function App() {
                     flex items-center gap-2 animate-fade-in"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
-        {/* Email Icon - inline SVG */}
+        email i con
         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
           <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
         </svg>
         contact Me
-      </a>
+      </a> */}
+
     </div>
   );
 }

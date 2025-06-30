@@ -9,9 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://rrrautela.github.io/",
+  "homepage": "https://rrrautela.github.io/rrrautela",
 
   "dependencies": {
     "framer-motion": "^12.19.1",

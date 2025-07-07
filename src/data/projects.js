@@ -5,7 +5,7 @@ export const projects = [
     title: "Wordle PvP",
     desc: "A real-time multiplayer Wordle clone built with React, featuring sleek UI, game logic, and socket-based interactions for challenging friends live.",
     image: "https://imgs.search.brave.com/0TdRcWMrIBaJLJsPAQ15Om1C8YgbDhtZy-nggsHlDw8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIz/ODI0MzkzNC9waG90/by93b3JkbGUtZ2Ft/ZS1kaXNwbGF5ZWQt/b24tYS1waG9uZS1h/bmQtYS1sYXB0b3At/c2NyZWVucy1pcy1z/ZWVuLWluLXRoaXMt/aWxsdXN0cmF0aW9u/LXBob3RvLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1qMkl5/Unp0QzBVRThUSHUy/TDB1RzdyOHY1ZTJt/NzZKRnpTeGdyZDZy/M0M0PQ",
-    link: "https://rrrautela.github.io/wordle-pvp/",
+    link: "https://wordle-pvp.vercel.app/",
     repo: "https://github.com/rrrautela/wordle-pvp",
     tags: ["React", "Socket.IO", "Multiplayer", "Real-Time", "Game Logic", "UI/UX"]
   },

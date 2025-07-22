@@ -5,37 +5,7 @@ import { useState, memo } from 'react'; // Importing memo for performance optimi
 
 import { projects } from './data/projects';
 
-/**
- * @typedef {Object} Project
- * @property {string} id - Unique identifier for the project. Crucial for list keys.
- * @property {string} title - The concise, descriptive title of the project.
- * @property {string} desc - A brief, professional description highlighting the project's purpose and key features.
- * @property {string} image - The URL of the project's thumbnail image. Using placeholders for demonstration.
- * @property {string} link - The URL to the live demo or deployed version of the project.
- * @property {string} repo - The URL to the GitHub repository for the project.
- * @property {string[]} tags - An array of technologies or keywords associated with the project, listed professionally.
- */
 
-/**
- * An array of project data to be displayed on the portfolio.
- * Each project includes essential details for rendering a ProjectCard.
- * @type {Project[]}
- */
-
-
-/**
- * @typedef {Object} Skill
- * @property {string} name - The name of the skill.
- * @property {string} iconPath - SVG path data for the icon (or a simple text/emoji).
- * @property {string} category - Category of the skill (e.g., 'Frontend', 'Backend').
- */
-
-/**
- * An array of skills to be displayed in the Expertise section.
- * Using SVG path data for icons to avoid external dependencies and ensure scalability.
- * These are placeholder paths; in a real app, you'd use actual SVG paths for specific icons.
- * @type {Skill[]}
- */
 const skills = [
   { name: "React", iconPath: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.33 14.07L12 10.33l-3.33 5.74H5.67L12 4.93l6.33 11.14h-2.99z", category: "Frontend" },
   { name: "JavaScript", iconPath: "M0 0h24v24H0z", category: "Frontend" },
@@ -46,20 +16,7 @@ const skills = [
   ];
 
 
-/**
- * ProjectCard Component
- * Displays a single project with image, title, description, tags, and links.
- * Features a Framer Motion-powered hover effect that scales up the card and adds a subtle rotation.
- * Utilizes `memo` for performance optimization, preventing unnecessary re-renders.
- *
- * @param {object} props - The component props.
- * @param {string} props.title - The title of the project.
- * @param {string} props.desc - A brief description of the project.
- * @param {string} props.image - The URL of the project image.
- * @param {string} props.link - The URL to the live demo of the project.
- * @param {string} props.repo - The URL to the GitHub repository of the project.
- * @param {string[]} props.tags - An array of technologies/tags used in the project.
- */
+
 const ProjectCard = memo(function ProjectCard({ title, desc, image, link, repo, tags = [] }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -156,7 +113,7 @@ const ProjectCard = memo(function ProjectCard({ title, desc, image, link, repo, 
 /**
  * Navbar Component
  * Displays the name and social media links.
- * Uses `memo` to prevent unnecessary re-renders as its props are static.
+ * Uses memo to prevent unnecessary re-renders as its props are static.
  */
 const Navbar = memo(function Navbar() {
   // Array of social media links for easier management and reusability.
@@ -257,13 +214,7 @@ const Navbar = memo(function Navbar() {
   );
 });
 
-/**
- * Main App Component
- * This is the root component of the portfolio application.
- * It orchestrates the layout, including the Navbar, a Hero section with a dynamic heading,
- * an About Me section, a Skills/Expertise section, a Projects section, and a Footer.
- * All components and data are consolidated here for a single-file deployment.
- */
+
 export default function App() {
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
@@ -397,7 +348,7 @@ export default function App() {
           className="text-lg text-gray-300 leading-relaxed mb-6"
           style={{ fontFamily: "'Poppins', sans-serif" }}
         >
-          I am a passionate software developer with a strong foundation in building robust and scalable applications. My journey in technology began with a curiosity for how things work, evolving into a drive to create impactful solutions. I thrive on challenges, continuously expanding my expertise across various domains and technologies.
+          I am a thoughtful software developer who enjoys turning complex problems into clean, working code. What started as curiosity has grown into a steady drive to build things that are both useful and intuitive. I care about writing code that’s easy to understand, maintain, and scale — not just in theory, but in practice. I’m constantly learning, not just new tools, but better ways to solve problems. Whether solo or in a team, I aim to contribute with clarity, care, and consistency.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -407,7 +358,7 @@ export default function App() {
           className="text-lg text-gray-300 leading-relaxed"
           style={{ fontFamily: "'Poppins', sans-serif" }}
         >
-          My focus is on crafting efficient, maintainable, and user-centric code, always with an eye on performance and best practices. I am eager to contribute to innovative projects and collaborate with forward-thinking teams.
+          My focus is on writing clean, efficient, and maintainable code that keeps both users and developers in mind. I care about performance, readability, and building things that hold up over time. I'm always up for projects that push me to think deeper and enjoy working with teams that value clarity, innovation, and good engineering over hype.
         </motion.p>
       </section>
 

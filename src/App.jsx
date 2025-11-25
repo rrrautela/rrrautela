@@ -106,7 +106,8 @@ const SocialLink = ({ href, icon }) => (
 
 const TerminalHero = () => {
   const [text, setText] = useState('');
-  const fullText = '> It started in 10th grade with me trying to convince the librarian to issue an 11th-grade CS book I wasn’t “supposed” to read yet.';
+  const fullText = `> Einstein said, “If you can’t explain it to a six-year-old, you don’t understand it yourself.”
+  > That’s why I break complex ideas into simple, visual, and intuitive solutions.`;
 
   useEffect(() => {
     let i = 0;
@@ -128,7 +129,7 @@ const TerminalHero = () => {
           <div className="ml-2 text-gray-400 text-xs">bash — 80x24</div>
         </div>
         <div className="p-6 text-green-400 min-h-[150px]">
-          <p className="mb-2"><span className="text-blue-400">user@portfolio</span>:<span className="text-purple-400">~</span>$ cat story.txt</p>
+          <p className="mb-2"><span className="text-blue-400">user@portfolio</span>:<span className="text-purple-400">~</span>$ cat welcome.txt</p>
           <p className="leading-relaxed">
             {text}
             <motion.span
@@ -332,7 +333,7 @@ export default function App() {
             </h1>
             <p className="text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Final Year Student & Logic-First Developer <br />
-              I break complex ideas into simple, visual, and intuitive solutions.
+              I build things that explain things.
             </p>
           </motion.div>
 

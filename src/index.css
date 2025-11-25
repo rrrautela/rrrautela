@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #050505;
+  color: #e5e5e5;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #c084fc, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-bounce:hover {
+  animation: bounceEffect 0.3s ease-in-out forwards;
+}
+
+@keyframes bounceEffect {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Glitch Effect */
+.glitch-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch {
+  position: relative;
+  color: white;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #050505;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -1px 0 #00fff9;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(33px, 9999px, 11px, 0);
+  }
+
+  20% {
+    clip: rect(87px, 9999px, 96px, 0);
+  }
+
+  40% {
+    clip: rect(15px, 9999px, 36px, 0);
+  }
+
+  60% {
+    clip: rect(62px, 9999px, 2px, 0);
+  }
+
+  80% {
+    clip: rect(4px, 9999px, 68px, 0);
+  }
+
+  100% {
+    clip: rect(55px, 9999px, 9px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(22px, 9999px, 4px, 0);
+  }
+
+  20% {
+    clip: rect(66px, 9999px, 21px, 0);
+  }
+
+  40% {
+    clip: rect(9px, 9999px, 86px, 0);
+  }
+
+  60% {
+    clip: rect(78px, 9999px, 45px, 0);
+  }
+
+  80% {
+    clip: rect(12px, 9999px, 33px, 0);
+  }
+
+  100% {
+    clip: rect(59px, 9999px, 91px, 0);
+  }
+}
+
+/* Custom Cursor Hide Default */
+body {
+  cursor: none;
+}
+
+a,
+button,
+.cursor-pointer {
+  cursor: none;
+}

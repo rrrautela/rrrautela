@@ -106,8 +106,7 @@ const SocialLink = ({ href, icon }) => (
 
 const TerminalHero = () => {
   const [text, setText] = useState('');
-  const fullText = `> Einstein said, “If you can’t explain it to a six-year-old, you don’t understand it yourself.”
-  > That’s why I break complex ideas into simple, visual, and intuitive solutions.`;
+  const fullText = "> If you can’t explain it to a six-year-old, you don’t understand it yourself. \n \t \t";
 
   useEffect(() => {
     let i = 0;
@@ -244,11 +243,11 @@ const DSAStats = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold font-mono flex items-center gap-3 mb-4">
               <span className="text-purple-500 text-2xl">&lt;</span>
-              <span className="text-purple-100">DSA Journey</span>
+              <span className="text-purple-100">DSA Logs</span>
               <span className="text-purple-500 text-2xl">/&gt;</span>
             </h2>
             <p className="text-gray-300 leading-relaxed text-lg">
-              I treat coding challenges as mental gymnastics. Consistently solving problems to sharpen my problem-solving skills and algorithmic thinking.
+              Building real problem solving skills in a shortcut generation.
             </p>
           </div>
 

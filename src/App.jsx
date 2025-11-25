@@ -128,7 +128,7 @@ const TerminalHero = () => {
           <div className="ml-2 text-gray-400 text-xs">bash — 80x24</div>
         </div>
         <div className="p-6 text-green-400 min-h-[150px]">
-          <p className="mb-2"><span className="text-blue-400">user@portfolio</span>:<span className="text-purple-400">~</span>$ cat quote.txt</p>
+          <p className="mb-2"><span className="text-blue-400">user@einstein</span>:<span className="text-purple-400">~</span>$ cat quote.txt</p>
           <p className="leading-relaxed">
             {text}
             <motion.span

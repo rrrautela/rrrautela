@@ -128,7 +128,7 @@ const TerminalHero = () => {
           <div className="ml-2 text-gray-400 text-xs">bash — 80x24</div>
         </div>
         <div className="p-6 text-green-400 min-h-[150px]">
-          <p className="mb-2"><span className="text-blue-400">user@portfolio</span>:<span className="text-purple-400">~</span>$ cat welcome.txt</p>
+          <p className="mb-2"><span className="text-blue-400">user@portfolio</span>:<span className="text-purple-400">~</span>$ cat quote.txt</p>
           <p className="leading-relaxed">
             {text}
             <motion.span
@@ -397,8 +397,8 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-12 text-center text-gray-500 text-sm relative z-10">
-        <p>© {new Date().getFullYear()} Harshit Singh Rautela. All rights reserved.</p>
-        <p className="mt-2">Built with React, Tailwind & Coffee ☕</p>
+        <p>© {new Date().getFullYear()} @rrrautela. All rights reserved.</p>
+        <p className="mt-2">Built with React, Tailwind & Curiosity</p>
       </footer>
     </div>
   );
